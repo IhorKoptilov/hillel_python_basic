@@ -2,8 +2,8 @@ a=2
 b=5
 c=a==b
 print(c)
-PI=3.14
-print(b-a+PI)
+PI="3.14"
+print(b-a+float(PI))
 d=[a, b, c, PI]
 print(set(d))
 e=(1,3,5)
