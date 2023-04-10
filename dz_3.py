@@ -23,8 +23,11 @@ print(lowest_number(25, -14, 39))
 # c
 def module(argument):
     if argument < 0:
-        return argument(-1)
+        return -argument
     return argument
+
+
+print(module(-25))
 
 
 # d
