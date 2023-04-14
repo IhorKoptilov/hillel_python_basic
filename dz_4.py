@@ -28,27 +28,25 @@ def mixed_arguments(positional1, positional2, /, mixed, named, five=5, six=6):
     pass
 
 
-mixed_arguments(1, 2, 3, named=4, five=5, six=6)
-
-
 # d
-# def number1(num1=int):
-#     return number2()
-#
-#
-# def number2(num2=int):
-#     return num1*num2
-#
-# print(number1(num1=2, num2=3))
+def number1(num1):
+    def number2(num2):
+        return num1 * num2
+
+    return number2
+
+
+assert number1(3)(5) == 15
 
 
 # e
 
 
-def square(num):
-    print('*' * num)
-    square(num)
+def square(*num):
+    if num > 0:
+        print('*' * num)
+        square(num - 1)
+    return
+
 
 square(5)
-
-
