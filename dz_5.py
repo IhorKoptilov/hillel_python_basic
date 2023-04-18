@@ -26,6 +26,22 @@ def string_to_dictionary1(text1=str):
     print(dict2)
     return
 
+def count_chars(string):
+    # Створити порожній словник для зберігання кількості входжень кожного символу
+    char_count = {}
+    
+    # Пройтися по кожному символу в рядку і додати його до словника
+    for char in string:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    
+    # Повернути словник з кількістю входжень кожного символу
+    return char_count
+
+
+
 
 def max_string():
     
