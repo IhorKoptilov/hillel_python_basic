@@ -7,84 +7,58 @@ len_first = len(first)
 list_first = list(first)
 
 three_first = '|'.join(list_first[::3])
-print(list_first)
-print(three_first)
 
 
-def string_to_dictionary(text=str):
-    list1 = list(text)
-    count = text.count(text)
-    dict1 = dict.fromkeys(list1, count)
-    print(dict1)
-    return
+def string_to_dictionary(text):
+    dict1 = {}
+    for letter in text:
+        dict1[letter] = text.count(letter)
+    return print(dict1)
 
 
-def string_to_dictionary1(text1=str):
-    list2 = list(text1)
-    count1 = list2.__len__()
-    dict2 = dict.fromkeys(text1, count1)
-    print(dict2)
-    return
+string_to_dictionary('buzzing')
 
-def count_chars(string):
-    # Створити порожній словник для зберігання кількості входжень кожного символу
-    char_count = {}
-    
-    # Пройтися по кожному символу в рядку і додати його до словника
-    for char in string:
-        if char in char_count:
-            char_count[char] += 1
+
+def count_letters(text):
+    letter_count = {}
+    for letter in text:
+        if letter in letter_count:
+            letter_count[letter] += 1
         else:
-            char_count[char] = 1
-    
-    # Повернути словник з кількістю входжень кожного символу
-    return char_count
+            letter_count[letter] = 1
+    return print(letter_count)
 
 
+print(count_letters('CHERRIES'))
 
 
-def max_string():
-    
-
-def find_longest_string(strings):
-    # Ініціалізувати змінну для зберігання найдовшого рядка
+def max_string(strings):
     longest_string = ""
-    
-    # Пройтися по кожному рядку у списку і зберегти найдовший
     for string in strings:
         if len(string) > len(longest_string):
             longest_string = string
-    
-    # Повернути найдовший рядок
     return longest_string
-    
-    
-def sort_and_join_words(string, separator):
-    # Розбиваємо рядок на список слів за допомогою заданого роздільника
+
+
+assert max_string(['pass', 'algorithm', 'write', 'a', 'program', 'test', 'program']) == 'algorithm'
+
+
+def sorted_and_glue_words(string, separator):
     words = string.split(separator)
-    # Сортуємо список слів
     sorted_words = sorted(words)
-    # Склеюємо відсортовані слова за допомогою заданого роздільника
     sorted_string = separator.join(sorted_words)
-    # Повертаємо відсортований рядок слів
     return sorted_string
-    print(sorted_string)
 
 
-sort_and_join_words('Hello world Alex Bill', '/')
+assert sorted_and_glue_words('c+f+d+a+b', '+') == 'a+b+c+d+f'
 
 
-def ascii_string(numbers):
-    # Створити порожній рядок для зберігання символів ASCII
+def ascii_to_string(numbers):
     ascii_str = ""
-    
-    # Пройтися по кожному числу в списку і додати відповідний символ ASCII до рядка
     for num in numbers:
         ascii_char = chr(num)
         ascii_str += ascii_char
-    
-    # Повернути рядок символів ASCII
-    return ascii_str
+    return print(ascii_str)
 
 
-
+ascii_to_string([119, 101, 108, 108, 32, 100, 111, 110, 101])
