@@ -46,6 +46,17 @@ def count_chars(string):
 def max_string():
     
 
+def find_longest_string(strings):
+    # Ініціалізувати змінну для зберігання найдовшого рядка
+    longest_string = ""
+    
+    # Пройтися по кожному рядку у списку і зберегти найдовший
+    for string in strings:
+        if len(string) > len(longest_string):
+            longest_string = string
+    
+    # Повернути найдовший рядок
+    return longest_string
     
     
 def sort_and_join_words(string, separator):
