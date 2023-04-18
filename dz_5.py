@@ -45,3 +45,19 @@ def sort_and_join_words(string, separator):
 
 
 sort_and_join_words('Hello world Alex Bill', '/')
+
+
+def ascii_string(numbers):
+    # Створити порожній рядок для зберігання символів ASCII
+    ascii_str = ""
+    
+    # Пройтися по кожному числу в списку і додати відповідний символ ASCII до рядка
+    for num in numbers:
+        ascii_char = chr(num)
+        ascii_str += ascii_char
+    
+    # Повернути рядок символів ASCII
+    return ascii_str
+
+
+
