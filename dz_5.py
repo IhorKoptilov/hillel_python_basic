@@ -1,8 +1,12 @@
 first = 'Python'
+
 print(first[::-1])
+
 len_first = len(first)
+
 list_first = list(first)
-three_first = str(list_first).split()
+
+three_first = '|'.join(list_first[::3])
 print(list_first)
 print(three_first)
 
