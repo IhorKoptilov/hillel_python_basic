@@ -29,3 +29,19 @@ def string_to_dictionary1(text1=str):
 
 def max_string():
     
+
+    
+    
+def sort_and_join_words(string, separator):
+    # Розбиваємо рядок на список слів за допомогою заданого роздільника
+    words = string.split(separator)
+    # Сортуємо список слів
+    sorted_words = sorted(words)
+    # Склеюємо відсортовані слова за допомогою заданого роздільника
+    sorted_string = separator.join(sorted_words)
+    # Повертаємо відсортований рядок слів
+    return sorted_string
+    print(sorted_string)
+
+
+sort_and_join_words('Hello world Alex Bill', '/')
