@@ -26,13 +26,14 @@ assert summ_of_items_in_list([1, [2, 3, [4], [5, 6, [7]]]]) == 28
 
 
 def list_of_required_len(list_of_str, number):
-    while len(list_of_str) != number:
-        for letter in list_of_str:
-            if len(list_of_str) < number:
-                list_of_str.append(letter)
-            elif len(list_of_str) > number:
-                list_of_str.pop()
-    return list_of_str
+    list2 = list_of_str[:]
+    while len(list2) != number:
+        for letter in list2:
+            if len(list2) < number:
+                list2.append(letter)
+            elif len(list2) > number:
+                list2.pop()
+    return list2
 
 
 assert list_of_required_len(['a', 'b', 'c'], 7) == ['a', 'b', 'c', 'a', 'b', 'c', 'a']
