@@ -38,20 +38,22 @@ class PaginationTestCase(unittest.TestCase):
         data = [1, 2, 3, 4]
         pagination = Pagination(data, items_per_page=3)
 
-        expected_page_data1 = [1, 2, 3]
-        self.assertEqual(list(pagination), expected_page_data1)
+        expected_page_data = [1, 2, 3]
+        self.assertEqual(list(next(pagination)), expected_page_data)
 
-        pagination.next_page()
         expected_page_data = [4]
-        self.assertEqual(list(pagination), expected_page_data)
+        self.assertEqual(list(next(pagination)), expected_page_data)
+
+        self.assertRaises(StopIteration, next, pagination)
 
         pagination.prev_page()
         expected_page_data = [1, 2, 3]
-        self.assertEqual(list(pagination), expected_page_data)
+        self.assertEqual(list(next(pagination)), expected_page_data)
 
         pagination.prev_page()
         expected_page_data = [1, 2, 3]
-        self.assertEqual(list(pagination), expected_page_data)
+        self.assertEqual(list(next(pagination)), expected_page_data[:-1])
+
 
 
 class AppTestCase(unittest.TestCase):
