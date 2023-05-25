@@ -48,11 +48,18 @@ def test_pagination():
 
 
 def test_app():
-    course = App("Math")
+    storage = FileStorage("test_storage.json")
+    app = App(storage)
 
-    course.add_student("John Doe")
-    assert course.get_students() == ["John Doe"]
+    app.add_course("Math")
+    app.add_course("English")
 
-    course.add_student("Jane Smith")
-    course.add_student("Alice Johnson")
-    assert course.get_students() == ["John Doe", "Jane Smith", "Alice Johnson"]
+    app.add_student()
+    assert len(storage.data['courses'][0]['students']) == 1
+
+    app.add_student()
+    app.add_student()
+    assert len(storage.data['courses'][0]['students']) == 3
+
+
+pytest.main()
